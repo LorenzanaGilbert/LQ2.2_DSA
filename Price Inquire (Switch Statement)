@@ -1,0 +1,26 @@
+let priceList = {
+  A: 30.00,
+  B: 35.00,
+  C: 100.00,
+  D: 120.00,
+  E: 180.00,
+};
+
+console.log("List of Choices:");
+console.log("A. Pepsi Cola       Php 30.00");
+console.log("B. Coca Cola       Php 35.00");
+console.log("C. Apple (per kg)  Php 100.00");
+console.log("D. Orange (per kg) Php 120.00");
+console.log("E. Hotdogs (per kg)Php 180.00");
+
+let item_choice = prompt("Enter your item choice (A-E):").toUpperCase();
+let quantity = parseInt(prompt("Enter the quantity:"));
+
+if (isNaN(quantity) || quantity <= 0) {
+  alert("Invalid quantity. Please enter a positive number.");
+} else if (priceList.hasOwnProperty(item_choice)) {
+  let totalPrice = priceList[item_choice] * quantity;
+  alert(Total price: Php ${totalPrice.toFixed(2)});
+} else {
+  alert("Invalid item choice.");
+}
